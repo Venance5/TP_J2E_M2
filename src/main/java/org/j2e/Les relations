@@ -1,0 +1,31 @@
+Relations
+
+    Entre Artiste et Album (1:N)
+        Un Artiste peut avoir plusieurs Albums
+        Un Album appartient à un seul Artiste
+        Cette relation est représentée par #idArtiste dans la table Album
+    Entre Album et TitreMusical (1:N)
+        Un Album peut contenir plusieurs TitresMusicaux
+        Un TitreMusical appartient à un seul Album
+        Cette relation est représentée par #idAlbum dans la table TitreMusical
+    Entre TypeSupport et TitreMusical (1:N)
+        Un TypeSupport peut être associé à plusieurs TitresMusicaux
+        Un TitreMusical est associé à un seul TypeSupport
+        Cette relation est représentée par #idType dans la table TitreMusical
+
+Détail des entités
+
+    TypeSupport
+        Clé primaire : id
+        Attribut : type
+    Artiste
+        Clé primaire : id
+        Attribut : nom
+    Album
+        Clé primaire : id
+        Attributs : nom, idArtiste (clé étrangère vers Artiste)
+    TitreMusical
+        Clé primaire : id
+        Attributs : titre, idType (clé étrangère vers TypeSupport), idAlbum (clé étrangère vers Album)
+
+Ces relations forment une structure où les TitresMusicaux sont liés à la fois aux Albums et aux TypesSupport, tandis que les Albums sont liés aux Artistes.
